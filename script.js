@@ -23,10 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Track user selections
     let selectedImages = [];
 
-    // Display images
+    // Display images with class names img1, img2, img3...
     allImages.forEach((src, index) => {
         const img = document.createElement("img");
         img.src = src;
+        img.classList.add(`img${index + 1}`); // Assign classes img1, img2, etc.
         img.setAttribute("data-id", index);
         img.addEventListener("click", () => selectImage(img, src));
         imageContainer.appendChild(img);
